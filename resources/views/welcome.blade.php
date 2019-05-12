@@ -83,6 +83,12 @@
                 <div class="title m-b-md">
                     <b><font size="10" color="#00bfff"> Welcome to RUET Ad Lister ! !</font></b>
                 </div>
+                <div class="links">
+                    <a href="{{url('/details')}}">
+                        <button type="details" class="btn btn-success">
+                            <font size="6">View Posts</font>
+                        </button></a>
+                </div>
 
                 {{--<div class="links">--}}
                     {{--<a href="https://laravel.com/docs">Docs</a>--}}

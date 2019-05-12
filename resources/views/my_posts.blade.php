@@ -21,7 +21,9 @@
                 <th scope="col">Price</th>
                 <th scope="col">Contact No.</th>
                 <th scope="col">Descripton</th>
-
+                @if (Auth::check())
+                    <th scope="col">Option</th>
+                @endif
             </tr>
             </thead>
             <tbody>
@@ -34,6 +36,19 @@
                     <td>{{$post->phone_no}}</td>
                     <td>{{$post->description}}</td>
                     {{--                    <td><a href="{{url('/edit')}}">Edit</a></td>--}}
+
+                    @if(Auth::check())
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{url('/edit/'.$post->id)}}"> Edit</a></li>
+                                    <li><a href="{{url('/delete/'.$post->id)}}"> Delete</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
             </tbody>
