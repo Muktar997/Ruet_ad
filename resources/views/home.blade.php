@@ -6,7 +6,7 @@
         <div class="col-md-8">
             {{--<--<div class="card">--}}
                 {{--<div class="card-header"><b><font size="10" color="blue"> What you want to post?</font></b></div>--}}
-            <b><font size="10" color="blue"> What do you want?</font></b>
+            <b><font size="10" color="blue"> What do you want ?</font></b>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -52,12 +52,12 @@
                                     <font size="6">View Posts</font>
                                 </button></a>
                         </div>
-
-
-
                 {{--</div>--}}
             </div>
         </div>
     </div>
+    <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+        <b><font size="4" color="red">Buy and sell goods in RUET</font></b>
+    </marquee>
 </div>
 @endsection

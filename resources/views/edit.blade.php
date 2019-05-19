@@ -29,7 +29,7 @@
                                 <label for="password-confirm" class="col-md-4 col-form-label text-md-right"><b><font size="3" color="blue"> Category Name</font></b></label>
 
                                 <div class="col-md-6">
-                                    {{ Form::select('cat_id',  $categories, null, ['placeholder'=>'Please Select', 'class'=>'form-control']) }}
+                                    {{ Form::select('cat_id',  $categories, null, ['class'=>'form-control','value'=>'$post->cat_id']) }}
                                 </div>
 
 {{--                                <div class="col-md-6">--}}

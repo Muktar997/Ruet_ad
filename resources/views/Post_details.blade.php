@@ -16,6 +16,7 @@
         <table class="table">
             <thead>
             <tr>
+                <th scope="col">Posted By</th>
                 <th scope="col">Category</th>
                 <th scope="col">Title</th>
                 <th scope="col">Price</th>
@@ -28,6 +29,7 @@
             @foreach($post_details as $post)
 
                 <tr>
+                    <td>{{$post->name}}</td>
                     <td>{{$post->cat_name}}</td>
                     <td>{{$post->title}}</td>
                     <td>{{$post->price}}</td>

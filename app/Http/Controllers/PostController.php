@@ -35,13 +35,13 @@ class PostController extends Controller
 //        $post->cat_name= $request->cat_name;
         $post->cat_id = $request->cat_id;
         $post->save();
-        $post_details = DB ::select("SELECT post.id,category.cat_name,post.title,post.price,post.phone_no,post.description FROM post,category WHERE post.cat_id=category.id ORDER BY category.cat_name");
+        $post_details = DB ::select("SELECT users.name, post.id,category.cat_name,post.title,post.price,post.phone_no,post.description FROM post,category,users WHERE post.cat_id=category.id AND users.id=post.user_id ORDER BY category.cat_name");
         return view ('Post_Details',compact('post_details'));
 
     }
     public function details()
     {
-        $post_details = DB ::select("SELECT post.id,category.cat_name,post.title,post.price,post.phone_no,post.description FROM post,category WHERE post.cat_id=category.id ORDER BY category.cat_name");
+        $post_details = DB ::select("SELECT users.name,post.id,category.cat_name,post.title,post.price,post.phone_no,post.description FROM post,category,users WHERE post.cat_id=category.id AND users.id=post.user_id ORDER BY category.cat_name");
         return view ('Post_Details',compact('post_details'));
     }
     public function my_posts()
@@ -56,12 +56,12 @@ class PostController extends Controller
     }
     public function price()
     {
-        $post_details = DB ::select("SELECT post.id,category.cat_name,post.title,post.price,post.phone_no,post.description FROM post,category WHERE post.cat_id=category.id ORDER BY post.price");
+        $post_details = DB ::select("SELECT users.name, post.id,category.cat_name,post.title,post.price,post.phone_no,post.description FROM post,category,users WHERE post.cat_id=category.id AND users.id=post.user_id ORDER BY post.price");
         return view ('Post_Details',compact('post_details'));
     }
     public function price_desc()
     {
-        $post_details = DB ::select("SELECT post.id,category.cat_name,post.title,post.price,post.phone_no,post.description FROM post,category WHERE post.cat_id=category.id ORDER BY post.price DESC");
+        $post_details = DB ::select("SELECT users.name, post.id,category.cat_name,post.title,post.price,post.phone_no,post.description FROM post,category,users WHERE post.cat_id=category.id AND users.id=post.user_id ORDER BY post.price DESC");
         return view ('Post_Details',compact('post_details'));
     }
 
